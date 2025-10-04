@@ -3,7 +3,8 @@ import pygame
 import os
 import itertools
 
-pygame.mixer.init()
+pygame.mixer.init(frequency=44100, size=-16, channels=2, buffer=512)
+pygame.mixer.set_num_channels(32)  # allows more notes to play simultaneously
 
 sound_dir = os.path.join(os.path.dirname(__file__), "wav")
 notes = []
